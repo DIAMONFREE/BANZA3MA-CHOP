@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BANZA3MA CHOP</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000, #111);
+      color: white;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 10px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #ccc;
+      text-shadow: 0 0 5px #0ff;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #0ff; }
+      to { text-shadow: 0 0 20px #0ff, 0 0 30px #00f; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      margin: 30px 0;
+      padding: 10px;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product {
+      min-width: 200px;
+      margin: 0 10px;
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #0ff3;
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .buy-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: linear-gradient(45deg, #0ff, #00f);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0ff;
+      transition: background 0.3s ease, transform 0.2s;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .buy-btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #00f, #0ff);
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.1em;
+      color: #f88;
+      text-shadow: 0 0 5px #f00;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #888;
+      font-family: 'Orbitron', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BANZA3MA CHOP</h1>
+    <p>اهلا وسهلا ،موقعنا يختص في بيع بطاقات شحن فري فاير وكل الألعاب الأخرى</p>
+  </header>
+
+  <div class="carousel" id="carousel">
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+1" alt="منتج 1"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+2" alt="منتج 2"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+3" alt="منتج 3"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+4" alt="منتج 4"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+5" alt="منتج 5"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+6" alt="منتج 6"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+7" alt="منتج 7"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+8" alt="منتج 8"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+9" alt="منتج 9"><button class="buy-btn">شراء</button></div>
+    <div class="product"><img src="https://via.placeholder.com/200x120?text=بطاقة+10" alt="منتج 10"><button class="buy-btn">شراء</button></div>
+  </div>
+
+  <div class="note">لاللإسترداد لذا يرجى العلم</div>
+
+  <footer>جميع الحقوق محفوظة لبن زعمة سيدعلي</footer>
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    let autoScroll;
+
+    function startAutoScroll() {
+      autoScroll = setInterval(() => {
+        carousel.scrollBy({ left: 1, behavior: 'smooth' });
+        if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      }, 20);
+    }
+
+    let idleTimer;
+    carousel.addEventListener('touchstart', () => clearInterval(autoScroll));
+    carousel.addEventListener('touchend', () => {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(startAutoScroll, 3000);
+    });
+
+    window.onload = () => {
+      idleTimer = setTimeout(startAutoScroll, 3000);
+    };
+  </script>
+</body>
+</html>
